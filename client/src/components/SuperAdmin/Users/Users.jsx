@@ -78,7 +78,6 @@ export default function Users() {
                   {e.address === "" ? "Address not found" : e.address}
                 </TableCell>
                  
-                </TableCell>
               </TableRow>
             ))}
             {console.log(allUsers)}
