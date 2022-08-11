@@ -514,7 +514,7 @@ export function answerSupport(payload) {
 export function deleteComment(idSupport) {
   return async function (dispatch) {
     try {
-      const re = await axios.delete("http://localhost:3001/support?idSupport=" + idSupport);
+      const re = await axios.delete("/support?idSupport=" + idSupport);
       return dispatch({ type: 'DELETE_COMMENT', payload: re.data });
     } catch (error) {
       console.log(error);
