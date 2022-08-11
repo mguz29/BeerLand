@@ -16,6 +16,7 @@ import { useAuth } from "../Context/Contestautenticacion";
 import Swal from "sweetalert2";
 import NavBar from "../NavBar/NavBar";
 import Container from '@mui/material/Container';
+import notfound from '../../img/notfound.png'
 
 export default function Cart() {
   const [checkout, setCheckout] = useState(false);
