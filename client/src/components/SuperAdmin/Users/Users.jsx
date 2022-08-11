@@ -77,8 +77,7 @@ export default function Users() {
                 <TableCell>
                   {e.address === "" ? "Address not found" : e.address}
                 </TableCell>
-                    </div>
-                  )}
+                 
                 </TableCell>
               </TableRow>
             ))}
