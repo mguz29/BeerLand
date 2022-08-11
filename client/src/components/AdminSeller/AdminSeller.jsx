@@ -14,20 +14,19 @@ const AdminSeller = ({ user ,salir2}) => {
     const dispatch = useDispatch()
     const seller = useSelector((state) => state.allSellers)
     let currentSeller;
+    let sellerId
     
     if (user !== null) {
         currentSeller = seller?.filter((e) => e.mail === user.email);
-       var sellerId = currentSeller[0].id
+        sellerId = currentSeller[0].id
     }
 
     useEffect(() => {
         dispatch(getAllSellers())
-        
-       if (sellerId !== null) {
             dispatch(getSalesBySellerId(sellerId))
             dispatch(getBeerSeller(sellerId))
-        }
-    }, [user])
+        
+    }, [currentSeller])
     console.log(sellerId);
     //Users
     // Sellers 
