@@ -77,9 +77,8 @@ export default function AdminAnswer({name, email, idSupport, isUser, userId}) {
                 }}
                 onSubmit={(valores, { resetForm }) => {
                     dispatch(post(valores, idUser))
-                   
+                    resetForm()
             window.location.reload(true)
-            resetForm()
             setTimeout(() => redirect(), "1000")
         }}>
             {({ touched, errors }) => (
