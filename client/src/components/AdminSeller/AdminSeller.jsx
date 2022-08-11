@@ -27,7 +27,7 @@ const AdminSeller = ({ user ,salir2}) => {
             dispatch(getSalesBySellerId(sellerId))
             dispatch(getBeerSeller(sellerId))
         }
-    }, [sellerId])
+    }, [])
     console.log(sellerId);
     //Users
     // Sellers 
