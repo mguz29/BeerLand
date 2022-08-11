@@ -22,9 +22,12 @@ const AdminSeller = ({ user ,salir2}) => {
 
     useEffect(() => {
         dispatch(getAllSellers())
-        dispatch(getSalesBySellerId(sellerId))
-        dispatch(getBeerSeller(sellerId))
-    }, [dispatch])
+        
+       if (sellerId !== undefined) {
+            dispatch(getSalesBySellerId(sellerId))
+            dispatch(getBeerSeller(sellerId))
+        }
+    }, [sellerId])
     console.log(sellerId);
     //Users
     // Sellers 
