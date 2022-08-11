@@ -61,8 +61,7 @@ export default function Users() {
               <TableCell>Surname</TableCell>
               <TableCell>Email</TableCell>
               <TableCell>Address</TableCell>
-              <TableCell>Amount Paid</TableCell>
-              <TableCell>Toggle Details</TableCell>
+            
             </TableRow>
           </TableHead>
           <TableBody>
@@ -78,23 +77,6 @@ export default function Users() {
                 <TableCell>
                   {e.address === "" ? "Address not found" : e.address}
                 </TableCell>
-                <TableCell>
-                  $
-                  {allPurchases
-                    .filter((purchase) => purchase.userId == e.id)
-                    .map((compra) => compra.totalPrice)}
-                </TableCell>
-                <TableCell>
-                  <button onClick={() => setModalOpen(true)}>
-                    Purchase Detail
-                  </button>{" "}
-                  {modalOpen && (
-                    <div>
-                      {" "}
-                      <PurchaseDetails
-                        setModalOpen={setModalOpen}
-                        userId={e.id}
-                      />
                     </div>
                   )}
                 </TableCell>
