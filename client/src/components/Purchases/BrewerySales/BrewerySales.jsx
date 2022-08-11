@@ -9,6 +9,7 @@ import styles from './BrewerySales.module.css'
 export default function BrewerySales() {
 
   const sales = useSelector((state) => state.filtroPurchases);
+  const [mostrar, setMostrar]=useState(false)
 
   
   return (
@@ -26,20 +27,21 @@ export default function BrewerySales() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {sales.map((e) => (
+            {mostrar? sales.map((e) => (
               <>
               <TableRow key={e.id}>               
                 <TableCell>{e.id}</TableCell>                
                 <TableCell>{e.user.name}</TableCell>
                 <TableCell>{e.status}</TableCell>                
-                <TableCell><button> hola</button></TableCell>
+                <TableCell><button onClick={setMostrar(true)}> hola</button></TableCell>
                 
               </TableRow>
               <TableRow>
-              <SaleDetail purchase={e} />
+              <SaleDetail purchase={e} setMostrar={setMostrar} mostrar={mostrar} />
               </TableRow>
               </>
-            ))}
+            ))
+            :''}
       
           </TableBody>
         </Table>
